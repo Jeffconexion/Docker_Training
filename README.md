@@ -21,11 +21,7 @@ Essential Docker for the .NET platform presents the main Docker concepts such as
 ## Running
 dotnet run
 
-<!--
+
 ## References
-[About issues - GitHub Docs](https://docs.github.com/en/issues/tracking-your-work-with-issues/about-issues)
+[About Docker - Docker Docs](https://docs.docker.com/get-started/overview/)
 
-[About wikis - GitHub Docs](https://docs.github.com/en/communities/documenting-your-project-with-wikis/about-wikis)
-
-[About discussions - GitHub Docs](https://docs.github.com/en/discussions/collaborating-with-your-community-using-discussions/about-discussions)
--->
