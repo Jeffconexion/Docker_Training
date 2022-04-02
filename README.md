@@ -1,26 +1,30 @@
-# Treinamento Docker
+<h1 align="center">Docker training</h1>
+<p align="center"><i>Repository for versioning and project documentation used during the trainig.</i></p>
 
-### Sinopse ###
-<p> 
-  Docker essencial para a plataforma .NET apresenta os principais conceitos do Docker como contêineres, imagens, volumes, redes, Docker Compose e sua aplicação em aplicações da plataforma .NET através da conteinerização de aplicações ASP .NET Core usando o  ambiente Linux , o .NET Core e o Visual Studio Code. 
+##  About this project
+Essential Docker for the .NET platform presents the main Docker concepts such as containers, images, volumes, networks, Docker Compose and its application in .NET platform applications through the containerization of ASP .NET Core applications using the Linux environment, the .NET Core and Visual Studio Code.
+
+### Technologies
+<p display="inline-block">
+  <li>Docker</li>
+  <li>.Net Core</li>
+  <li>C#</li>
+</p>
+                                                                                                  
+### Development Tools
+
+<p display="inline-block">
+  <img width="48" src="https://static.wikia.nocookie.net/logopedia/images/e/ec/Microsoft_Visual_Studio_2022.svg" alt="vs-logo"/>
 </p>
 
-### Tópicos ###
-* 1 - Contêineres.
-* 2 - Imagens.
-* 3 - Volumes.
-* 4 - Networks.
-* 6 - Docker Compose.
-* 7 - Desenvolvimento na Plataforma .net .
+## Running
+dotnet run
 
 <!--
-### Projeto ###
-<p> 
-Colocando em prática o conceito teórico, construíndo uma calculadora.
-</p> 
+## References
+[About issues - GitHub Docs](https://docs.github.com/en/issues/tracking-your-work-with-issues/about-issues)
 
-<p align="center">
-  <img src="https://github.com/Jeffconexion/projeto_calculadora_angular/blob/main/calculadora.PNG" />
-</p>
+[About wikis - GitHub Docs](https://docs.github.com/en/communities/documenting-your-project-with-wikis/about-wikis)
 
+[About discussions - GitHub Docs](https://docs.github.com/en/discussions/collaborating-with-your-community-using-discussions/about-discussions)
 -->
