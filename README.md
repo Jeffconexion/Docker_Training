@@ -23,5 +23,5 @@ dotnet run
 
 
 ## References
-[About Docker - Docker Docs](https://docs.docker.com/get-started/overview/)
+[About Docker - Docker Doc](https://docs.docker.com/get-started/overview/)
 
