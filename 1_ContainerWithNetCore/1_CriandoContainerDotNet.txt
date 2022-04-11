@@ -1,0 +1,16 @@
+Baixando uma imagem dotnet 6.0
+
+Criando e entrando no container
+- docker container run --name demoNet -it mcr.microsoft.com/dotnet/sdk
+
+Criando appConsole
+- dotnet new console
+
+Build appConsole
+- dotnet build
+
+Executando appConsole
+- dotnet run
+
+Entrar no container após criado e parado.
+docker container start -ia dotnet
