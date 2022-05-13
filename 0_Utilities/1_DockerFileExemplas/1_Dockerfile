@@ -1,4 +1,6 @@
 
+# Tem o propósito de rodar o servidor nginx no Debian
+
 # Define base image.
 FROM debian:8
 LABEL version="1.0" description="Debian/Nginx"

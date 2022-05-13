@@ -1,14 +1,21 @@
 
-# 1- Definir uma imagem base.
+# Tem o propósito de rodar aplicação .net core 5.0 pelo navegador na porta 3000
+
+# 1- definir qual será o ponto de partida da imagem que criaremos com o nosso Dockerfile, 
+# ou seja, se eu quiser utilizar a imagem do .net Core para produzir meu container, basta 
+# que eu especifique para utilizar a imagem do dotnet 5.0.
 FROM mcr.microsoft.com/dotnet/aspnet:5.0 AS base
 
 # 2- Definir informações para a imagem.
 LABEL version="1.0.1" description="Aplicacao Asp .Net Core"
 
-# 3- Definir a pasta de trabalho (/app)
+# 3- Essa instrução tem o propósito de definir o nosso ambiente de trabalho. Com ela, definimos 
+# onde as instruções CMD, RUN, ENTRYPOINT, ADD e COPY executarão suas tarefas, além de definir o 
+# diretório padrão que será aberto ao executarmos o container.(/app)
 WORKDIR /app
 
 # 4- Copiar os arquivos da pasta dist para uma pasta no contêiner (/app)
+# A instrução COPY, permite apenas a passagem de arquivos ou diretórios, diferente do ADD, que permite downloads.
 COPY dist /app
 
 # 5- Expor a porta do contêiner e definir em qual porta o servidor vai atender.
