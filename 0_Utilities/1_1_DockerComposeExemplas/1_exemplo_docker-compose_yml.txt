@@ -1,0 +1,56 @@
+#1~~> verificar sintaxe
+#docker-compose build
+
+#2~~> fazer um teste
+#docker-compose up
+
+#3~~> desfazer a operação
+#docker-compose down
+
+#Defino a versão a ser utilizado do docker-compose
+version: "3"
+
+#Defino o volume que irá ser utilizado pelos container.
+#Definimos um volume chamado ~~> produtosdata
+volumes:
+      produtosdata:
+
+#Defino as minhas redes
+networks:
+       frontend:
+       backend:
+
+#Define os contêneires que serão utilizados ~~> Imagens, contextos, etc.
+services:
+
+      mysql:
+        image: "mysql:5.7"
+        volumes:
+          - produtosdata:/var/lib/mysql
+          - ./_MySQL_Init_Script:/docker-entrypoint-initdb.d
+        networks:
+          - backend
+        environment:
+          - MYSQL_ROOT_PASSWORD=numsey
+          - bind-address=0.0.0.0
+    
+  #Configurações para o container AspNet MVC
+      mvc: 
+       #indica o início da seção build que diz ao docker como criar a imagem para o conteiner deste serviço
+        build:
+        #define o diretório do contexto que será usado para criar a imagem. Usa o diretório atual do projeto MVC.
+         context: .
+         #Especifica o arquivo dockerfile usado para criar a imagem
+         dockerfile: Dockerfile
+        networks:
+         - backend #para acessar o container do mysql.
+         - frontend #para receber as requisições.
+         #define o mapeamento das portas.
+        ports:
+         - 5000:80 #configuração da porta para o meu container poder ser acessado.
+        environment:
+         - DBHOST=mysql #define o nome do host (vai ser utilizado na string de conexão)
+         - ASPNETCORE_ENVIRONMENT=Development
+         #Diz ao docker a ordem na qual os contêineres serão criados. Aqui o contêiner mysql será iniciado antes do contêiner mvc.
+        depends_on: #Esse container depender do container do mysql
+         - mysql   
