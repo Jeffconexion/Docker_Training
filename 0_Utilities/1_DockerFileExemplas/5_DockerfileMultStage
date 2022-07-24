@@ -1,0 +1,28 @@
+#Docker FILE OTIMIZADO
+# STAGE 1- BASE
+# ~~>define qual será o ponto de partida da imagem que criaremos com o nosso Dockerfile
+FROM mcr.microsoft.com/dotnet/aspnet:5.0 AS base 
+# ~~>define ou cria um diretorio de trabalho para o container do docker
+WORKDIR /src 
+# ~~>define a porta que o docker irá disponibilizar, para o tráfego de fora para o conteiner.
+EXPOSE 80
+EXPOSE 443
+
+# ~~> STAGE 2- PUBLISH
+FROM mcr.microsoft.com/dotnet/sdk:5.0  AS publish
+WORKDIR /src
+COPY 1_DemoApiDocker.csproj .
+RUN dotnet restore
+COPY . .
+RUN dotnet publish -c release -o /dist
+
+# ~~> STAGE 3- END
+# ~~>uso a imagem no passa 1 base.
+FROM base AS end
+WORKDIR /dist
+# ~~>copio o que foi gerado no estágio 2, publish.
+# ~~>copio para /app/dist .
+COPY --from=publish /app/dist . 
+
+# ~~> informa ao Docker para configurar o contêiner para ser executado como um executável.
+ENTRYPOINT ["dotnet", "1_DemoApiDocker.dll"]
