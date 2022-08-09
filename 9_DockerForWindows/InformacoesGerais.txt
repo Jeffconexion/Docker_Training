@@ -10,7 +10,9 @@ Docker-Compose comandos :
 --> CRIANDO CONTAINER SOMENTE PARA O MONGODB <--
 1 - App sem dockerfile ou compose
 
+
 2 - Webconfig apontando para 27017 e rodar o domando a seguir.
 docker run -d -p 27017:27017 --name catalog-mongo mongo
 
 --> CRIANDO CONTAINER PARA O MONGO E APP <--
+só executar o docker compose.
