@@ -1,0 +1,130 @@
+----------------------------------------------------------------------------
+                       MANY COMMANDS ABOUT DOCKER
+----------------------------------------------------------------------------
+
+# Example 1: How to Check docker command version
+docker --version
+
+# Example 2: How to Run a Container
+docker container run -d -p 27017:27017 --name catalog-mongo mongo
+
+# Example 3: How to Check all running Containers
+docker container ps
+
+# Example 4: How to Create a Container
+docker container create -it debian /bin/bash
+
+# Example 5: How to Start and attach STDIN to a Container
+docker start -ai a4f0a9ac7
+
+# Example 6: How to List all the docker images
+docker images
+
+# Example 7: How to Check the status of all Containers
+docker ps -a
+
+# Example 8: How to Remove all unused Images
+docker image prune
+
+# Example 9: How to Run Container in Detach Mode
+docker container run -it -d debian
+
+# Example 10: How to Stop a Container
+docker container stop 4197e54fa6d8
+
+# Example 11: How to Remove a Container
+docker container rm 4197e54fa6d8
+
+# Example 12: How to Access a Container
+docker container exec -ti 0ea2b7740fa0 bash
+
+# Example 13: How to Start a docker Container
+docker start 0ea2b7740fa0
+
+# Example 14: How to Restart a docker Container
+docker container restart 0ea2b7740fa0
+
+# Example 15: How to List all the docker network Details
+docker network ls
+
+# Example 16: How to Check Complete Docker Information
+docker info
+
+# Example 17: How to Search a Docker Image
+docker search nginx
+
+# Example 18: How to Create a Docker Volume
+docker volume create
+
+# Example 19: How to List all the Docker Volume
+docker volume ls
+
+#Example 20: How to Kill a Container
+docker container kill 12576eaaab85
+
+# Example 21: How to Download a docker Image
+docker pull ubuntu
+
+# Example 22: How to Save a Image to a Tar Archive
+docker save debian > debian.tar
+
+# Example 23: How to Check Docker Stats
+docker stats
+
+# Example 24: How to forcefully delete a docker Image
+docker rmi -f 0980b84bde89
+
+# Example 25: How to Load Image from a Tar File
+docker load --input debian.tar
+
+# Example 26: How to Check docker disk Usage
+docker system df
+
+# Example 27: How to Login to Docker Hub
+docker login
+
+# Example 28: How to Log out from Docker Registry
+docker logout
+
+# Example 29: How to Create a new Image from a Container's Changes
+docker container commit c9ed8d8e9e1c debian:latest
+
+# Example 30: How to Inspect the Changes of Container Files and Directories
+docker diff c9ed8d8e9e1c
+
+# Example 31: How to Pause all the processes within a Container
+docker container pause c9ed8d8e9e1c
+
+# Example 32: How to Update a Container's CPU-Shares
+docker update --cpu-shares 100 c9ed8d8e9e1c
+
+# Example 33: How to Unpause all the processes within a Container
+docker unpause c9ed8d8e9e1c
+
+# Example 34: How to Tag an Image By ID
+docker tag 06b06e038e17 docker.io/debian:latest-release
+docker images
+
+# Example 35: How to Check the Logs of a Container
+docker logs c9ed8d8e9e1c
+
+# Example 36: How to Push an Image to Dockerhub
+docker push cyberithub/debian
+
+# Example 37: How to Rename a Container
+docker ps
+
+# Example 38: How to Check Container Information in JSON format
+docker inspect c9ed8d8e9e1c
+
+# Example 39: How to Check all the options available with docker command
+docker --help
+
+# Example 40: How to Check Man Page of docker command
+man docker
+
+# Example 41: How to run docker compose
+docker-compose -f docker-compose.yml -f docker-compose.override.yml up -d
+
+# Example 41: How to down docker compose
+ddocker-compose -f docker-compose.yml -f docker-compose.override.yml down

@@ -1,0 +1,17 @@
+version: "3.7"
+
+services:
+  minicurso-service:
+    build: MiniCurso.API
+    container_name: minicurso-service
+    restart: unless-stopped
+    ports:
+      - 5000:5000
+      - 5001:5001
+    networks:
+      - mcourse
+
+networks:
+  mcourse:
+    name: mcourse
+    external: true

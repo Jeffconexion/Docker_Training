@@ -1,0 +1,21 @@
+Docker-Compose comandos :
+
+	docker-compose -f docker-compose.yml -f docker-compose.override.yml up --build
+	ou
+	docker-compose -f docker-compose.yml -f docker-compose.override.yml up -d
+	docker-compose -f docker-compose.yml -f docker-compose.override.yml down
+
+
+
+--> CRIANDO CONTAINER SOMENTE PARA O sql server<--
+1 - App sem dockerfile ou compose
+baixar a imagem
+docker run -e "ACCEPT_EULA=Y" -e "SA_PASSWORD=04319283Numsei#2022" -p 1433:1433 --name sqlserverdb -d mcr.microsoft.com/mssql/server:2019-latest
+
+
+2 - Configurando Webconfig .
+"SqlConnection": "Server=localhost,1433;Database=ProductsDb;User Id=sa;Password=04319283Numsei#2022"
+
+
+--> CRIANDO CONTAINER PARA O Sql Server E APP <--
+só executar o docker compose.
